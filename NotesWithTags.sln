@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesWithTags.Tests.Unit", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesWithTags.Tests.Integration", "NotesWithTags.Tests.Integration\NotesWithTags.Tests.Integration.csproj", "{BD0BE9FA-42D3-44F0-AC99-E65D14FC1126}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotesWithTags.Adapters.Data", "NotesWithTags.Adapters.Data\NotesWithTags.Adapters.Data.csproj", "{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{BD0BE9FA-42D3-44F0-AC99-E65D14FC1126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD0BE9FA-42D3-44F0-AC99-E65D14FC1126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD0BE9FA-42D3-44F0-AC99-E65D14FC1126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5177FF8-CA43-4AA4-A62C-37849D2BA2DB} = {E8D99F52-6871-4348-B8BC-A64F7AC7BB61}
@@ -58,5 +64,6 @@ Global
 		{9410A6E9-89A6-4455-BEAB-88E54D923E7E} = {D2D62E3C-CFE7-4781-8969-C7B4A149218B}
 		{38BFD1F4-F6B1-4E1C-A91C-F74A6A8FA07A} = {8AE11943-B747-414D-B79E-A39B72587786}
 		{BD0BE9FA-42D3-44F0-AC99-E65D14FC1126} = {8AE11943-B747-414D-B79E-A39B72587786}
+		{EB1B36E6-7E04-4C69-AD5F-21D9CBADA43B} = {732CC89A-9BCD-464B-ADF9-E6E484BB1E47}
 	EndGlobalSection
 EndGlobal

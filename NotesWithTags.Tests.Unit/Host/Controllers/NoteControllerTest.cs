@@ -32,7 +32,14 @@ public class NoteControllerTest
     public async Task GetAllNotes_should_call_note_service_and_return_list_of_notes()
     {
         // arrange
-        var expected = new List<Note>();
+        var expected = new List<Note>
+        {
+            new Note
+            {
+                Id = "fake-note-id",
+                NoteText = "fake-note-text"
+            }
+        };
 
         _noteServiceMock.Setup(x => x.GetAllNotes("fake-user-id", It.IsAny<CancellationToken>()))
             .ReturnsAsync(expected);
