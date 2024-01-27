@@ -20,7 +20,10 @@
 
     <ItemGroup>
       <Folder Include="Controllers\" />
-      <Folder Include="Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NotesWithTags.Services.App\NotesWithTags.Services.App.csproj" />
     </ItemGroup>
 
 </Project>
