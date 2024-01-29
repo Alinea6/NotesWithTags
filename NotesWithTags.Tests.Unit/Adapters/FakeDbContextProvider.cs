@@ -14,8 +14,10 @@ public static class FakeDbContextProvider
         var context = new DataContext(options);
 
         var notes = GenerateNotes();
+        var users = GenerateUsers();
 
         context.Notes.AddRange(notes);
+        context.Users.AddRange(users);
         context.SaveChangesAsync();
 
         return context;
@@ -45,6 +47,25 @@ public static class FakeDbContextProvider
                 UserId = "fake-user-id-2",
                 NoteText = "fake-note-text-3",
                 Tags = ["fake-tag-2"]
+            }
+        ];
+    }
+
+    private static User[] GenerateUsers()
+    {
+        return
+        [
+            new User
+            {
+                Id = "fake-id-1",
+                Login = "fake-login-1",
+                Password = "fake-password-1"
+            },
+            new User
+            {
+                Id = "fake-id-2",
+                Login = "fake-login-2",
+                Password = "fake-password-2"
             }
         ];
     }
