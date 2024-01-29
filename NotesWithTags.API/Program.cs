@@ -5,9 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 
-services.RegisterOptions();
+services.RegisterOptions(configuration);
 services.RegisterComponents();
 services.RegisterExternalServices(configuration);
+services.RegisterSecurityServices(configuration);
 
 services.AddFluentValidation();
 services.AddSwagger();

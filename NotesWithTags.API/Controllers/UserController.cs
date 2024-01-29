@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NotesWithTags.API.Models;
 using NotesWithTags.Services.App.Int;
@@ -5,6 +6,7 @@ using LoginRequest = NotesWithTags.API.Models.LoginRequest;
 
 namespace NotesWithTags.API.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class UserController : ControllerBase
