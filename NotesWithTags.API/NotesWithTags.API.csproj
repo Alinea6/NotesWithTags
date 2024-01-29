@@ -22,10 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\NotesWithTags.Adapters.Data\NotesWithTags.Adapters.Data.csproj" />
       <ProjectReference Include="..\NotesWithTags.Services.App\NotesWithTags.Services.App.csproj" />
     </ItemGroup>
