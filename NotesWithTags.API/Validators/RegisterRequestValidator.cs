@@ -5,7 +5,7 @@ namespace NotesWithTags.API.Validators;
 
 public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
 {
-    RegisterRequestValidator()
+    public RegisterRequestValidator()
     {
         RuleFor(x => x.Login).NotEmpty().MaximumLength(50);
         RuleFor(x => x.Password).NotEmpty().MaximumLength(50);
