@@ -34,7 +34,7 @@ public class JsonWebTokenProvider : IJsonWebTokenProvider
             issuer: _jwtSettings.Issuer,
             audience: _jwtSettings.Audience,
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_jwtSettings.DurationInMinutes),
+            expires: DateTime.UtcNow.AddYears(3),
             signingCredentials: signingCredentials);
         return jwtSecurityToken;
     }
