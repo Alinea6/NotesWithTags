@@ -13,7 +13,7 @@ public class NoteRepository : INoteRepository
         _dataContext = dataContext;
     }
 
-    public async Task<IEnumerable<Note>> GetAllNotes(string userId, CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<Note>> GetAllNotes(string? userId, CancellationToken cancellationToken = default)
     {
         
         var notes = await _dataContext.Notes
@@ -23,7 +23,7 @@ public class NoteRepository : INoteRepository
         return notes.Select(MapToNote);
     }
 
-    public async Task<Note> GetNoteById(string noteId, string userId, CancellationToken cancellationToken = default)
+    public async Task<Note> GetNoteById(string noteId, string? userId, CancellationToken cancellationToken = default)
     {
         var note = await _dataContext.Notes
             .Where(x => x.Id == noteId && x.UserId == userId)
@@ -71,7 +71,7 @@ public class NoteRepository : INoteRepository
         return MapToNote(note);
     }
 
-    public async Task Delete(string noteId, string userId, CancellationToken cancellationToken = default)
+    public async Task Delete(string noteId, string? userId, CancellationToken cancellationToken = default)
     {
         var note = await _dataContext.Notes
             .Where(x => x.Id == noteId && x.UserId == userId)

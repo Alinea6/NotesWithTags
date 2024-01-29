@@ -1,10 +1,11 @@
+using System.Security.Claims;
+
 namespace NotesWithTags.API.Controllers;
 
 public class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
 {
-    protected string GetUserId()
+    protected string? GetUserId()
     {
-        // TODO: replace with jwt implementation
-        throw new NotImplementedException();
+        return User.FindFirst(ClaimTypes.Name)?.Value;
     }
 }

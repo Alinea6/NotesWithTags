@@ -14,12 +14,12 @@ public class NoteService : INoteService
         _noteRepository = noteRepository;
     }
     
-    public Task<IEnumerable<Note>> GetAllNotes(string userId, CancellationToken cancellationToken = default)
+    public Task<IEnumerable<Note>> GetAllNotes(string? userId, CancellationToken cancellationToken = default)
     {
         return _noteRepository.GetAllNotes(userId, cancellationToken);
     }
 
-    public Task<Note> GetNoteById(string noteId, string userId, CancellationToken cancellationToken = default)
+    public Task<Note> GetNoteById(string noteId, string? userId, CancellationToken cancellationToken = default)
     {
         return _noteRepository.GetNoteById(noteId, userId, cancellationToken);
     }
@@ -36,7 +36,7 @@ public class NoteService : INoteService
         return await _noteRepository.Update(input, cancellationToken).ConfigureAwait(false);
     }
 
-    public Task Delete(string noteId, string userId, CancellationToken cancellationToken = default)
+    public Task Delete(string noteId, string? userId, CancellationToken cancellationToken = default)
     {
         return _noteRepository.Delete(noteId, userId, cancellationToken);
     }

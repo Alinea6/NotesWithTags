@@ -1,4 +1,7 @@
+using System.Security.Claims;
 using FluentAssertions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Moq;
 using NotesWithTags.API.Controllers;
 using NotesWithTags.API.Models;
@@ -19,7 +22,21 @@ public class NoteControllerTest
         _noteServiceMock = new Mock<INoteService>(MockBehavior.Strict);
         _sut = new NoteController(_noteServiceMock.Object);
         
-        //TODO: add helper for getting id from jwt
+        var context = new DefaultHttpContext();
+
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.Name, "fake-user-id"),
+        };
+        var identity = new ClaimsIdentity(claims, "TestAuthType");
+        var claimsPrincipal = new ClaimsPrincipal(identity);
+
+        context.User = claimsPrincipal;
+
+        _sut.ControllerContext = new ControllerContext
+        {
+            HttpContext = context
+        };
     }
 
     [TearDown]

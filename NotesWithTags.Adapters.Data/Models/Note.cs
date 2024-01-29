@@ -10,7 +10,7 @@ public class Note
     public string Id { get; set; }
     
     [Required]
-    public string UserId { get; set; }
+    public string? UserId { get; set; }
     
     public string NoteText { get; set; }
     
