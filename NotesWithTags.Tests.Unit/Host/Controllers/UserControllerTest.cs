@@ -27,7 +27,7 @@ public class UserControllerTest
     }
 
     [Test]
-    public async Task Login_should_map_request_to_input_call_user_service_and_return_user_id()
+    public async Task Login_should_map_request_to_input_call_user_service_and_return_token()
     {
         // arrange
         var request = new LoginRequest
@@ -42,17 +42,17 @@ public class UserControllerTest
         };
 
         _userServiceMock.Setup(x => x.Login(MoqHandler.IsEquivalentTo(input), It.IsAny<CancellationToken>()))
-            .ReturnsAsync("fake-user-id");
+            .ReturnsAsync("fake-token");
         
         // act
         var result = await _sut.Login(request);
         
         // assert
-        result.Should().Be("fake-user-id");
+        result.Should().Be("fake-token");
     }
 
     [Test]
-    public async Task Register_should_map_request_to_input_call_user_service_and_return_token()
+    public async Task Register_should_map_request_to_input_call_user_service_and_user_id()
     {
         // arrange
         var request = new RegisterRequest
@@ -67,12 +67,12 @@ public class UserControllerTest
         };
 
         _userServiceMock.Setup(x => x.Register(MoqHandler.IsEquivalentTo(input), It.IsAny<CancellationToken>()))
-            .ReturnsAsync("fake-token");
+            .ReturnsAsync("fake-id");
         
         // act
         var result = await _sut.Register(request);
         
         // assert
-        result.Should().Be("fake-token");
+        result.Should().Be("fake-id");
     }
 }
