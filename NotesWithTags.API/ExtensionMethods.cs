@@ -1,7 +1,9 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using NotesWithTags.Adapters.Data;
 using NotesWithTags.API.Validators;
 
 namespace NotesWithTags.API;
@@ -16,6 +18,12 @@ public static class ExtensionMethods
     public static void RegisterComponents(this IServiceCollection services)
     {
         
+    }
+
+    public static void RegisterExternalServices(this IServiceCollection services, IConfiguration configuration )
+    {
+        services.AddDbContext<DataContext>(options =>
+            options.UseNpgsql(configuration.GetConnectionString("DataContext")));
     }
 
     public static void AddFluentValidation(this IServiceCollection services)

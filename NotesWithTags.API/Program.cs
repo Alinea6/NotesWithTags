@@ -7,6 +7,7 @@ var configuration = builder.Configuration;
 
 services.RegisterOptions();
 services.RegisterComponents();
+services.RegisterExternalServices(configuration);
 
 services.AddFluentValidation();
 services.AddSwagger();

@@ -1,0 +1,1 @@
+dotnet ef database update --configuration Release --context DataContext --project "./NotesWithTags.Adapters.Data.csproj" --startup-project "../NotesWithTags.API/NotesWithTags.API.csproj"

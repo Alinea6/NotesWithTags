@@ -1,0 +1,1 @@
+dotnet ef migrations remove --configuration Release --context DataContext --project "./NotesWithTags.Adapters.Data.csproj" --startup-project "../NotesWithTags.API/NotesWithTags.API.csproj"
