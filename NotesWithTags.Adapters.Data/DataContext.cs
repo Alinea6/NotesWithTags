@@ -6,6 +6,7 @@ namespace NotesWithTags.Adapters.Data;
 public class DataContext : DbContext
 {
     public DbSet<Note> Notes { get; set; }
+    public DbSet<User> Users { get; set; }
     
     public DataContext(DbContextOptions<DataContext> options) : base(options)
     {
@@ -14,6 +15,7 @@ public class DataContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         ConfigureNotes(modelBuilder);
+        ConfigureUsers(modelBuilder);
         
         base.OnModelCreating(modelBuilder);
     }
@@ -28,5 +30,16 @@ public class DataContext : DbContext
             .HasOne<User>()
             .WithMany()
             .HasForeignKey(x => x.UserId);
+    }
+
+    private void ConfigureUsers(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Id)
+            .IsUnique();
+
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.Login)
+            .IsUnique();
     }
 }
