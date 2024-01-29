@@ -16,10 +16,9 @@ public static class ExtensionMethods
 
     public static IConfigurationBuilder AddTestConfiguration(this IConfigurationBuilder builder)
     {
-        //TODO: Add UserSercrets
         return builder
             .AddJsonFile("appsettings.Test.json")
-            .AddUserSecrets("")
+            .AddUserSecrets("d857d7b0-f6da-4d1f-81c8-e84d8a0b8aa1")
             .AddEnvironmentVariables();
     }
 }

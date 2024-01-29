@@ -6,6 +6,6 @@ public class ControllerBase : Microsoft.AspNetCore.Mvc.ControllerBase
 {
     protected string? GetUserId()
     {
-        return User.FindFirst(ClaimTypes.Name)?.Value;
+        return User.Claims.FirstOrDefault(x => x.Type == "name")?.Value;
     }
 }
